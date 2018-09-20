@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Junp : MonoBehaviour {
+    // こっちが本物
 
 	public Rigidbody springRb;
     public GameObject springObj;
@@ -32,9 +33,6 @@ public class Junp : MonoBehaviour {
 
                 HoldSpace();
 
-
-
-            //checkSize();
 
         }
         else{
@@ -77,6 +75,8 @@ public class Junp : MonoBehaviour {
         }
     }
 
+
+    // 力をためる・待機
     public void HoldSpace(){
         if(Input.GetKey(KeyCode.Space)){
             Debug.Log("スペース");
@@ -117,21 +117,5 @@ public class Junp : MonoBehaviour {
 
         Vector3 moveForce = new Vector3(xPos, 0, zPos);
         springRb.AddForce(moveForce);
-    }
-
-
-    public void HoldSpaceKey() {
-        minimam = false;
-        while (true) {
-
-            if (Input.GetKey(KeyCode.Space)) {
-                Debug.Log("Hold");
-            }
-
-            if (Input.GetKeyUp(KeyCode.Space)) {
-               break;
-            }
-           
-        }
     }
 }
